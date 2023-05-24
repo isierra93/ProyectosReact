@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 
 import Square from './components/Square.jsx';
 import WinnerModal from './components/WinnerModal.jsx';
 import Tablero from './components/Tablero.jsx';
 
-import { TURNS } from './constants.js';
+import { TURNS } from './utils/constants.js';
 import { checkWinner , checkEndGame } from './utils/logic.js';
 import { saveGameToStorage, resetGameStorage } from './storage/localStorage.js';
 
@@ -44,8 +44,6 @@ function App() {
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X
     setTurn(newTurn)
 
-    saveGameToStorage(newBoard, newTurn)
-
     const newWinner = checkWinner(newBoard)
     if (newWinner) {
       confetti()
@@ -54,6 +52,10 @@ function App() {
       setWinner(false)
     }
   }
+
+  useEffect(() =>{
+    saveGameToStorage(board, turn)
+  }, [turn, board])
 
   return (
     <main className='board'>
