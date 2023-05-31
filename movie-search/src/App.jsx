@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className='page'>
       <header>
         <h1>Buscador de peliculas</h1>
         <form className='form' action='' onSubmit={handleSubmit}>
@@ -38,7 +38,7 @@ function App() {
           <Movies movies={mappedMovies}/>
         </section>
       </main>
-    </>
+    </div>
   )
 }
 

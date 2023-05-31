@@ -14,10 +14,10 @@ export const Movies = ({movies}) =>{
 
 function ListOfMovies ({movies}) {
     return(
-        <ul>
+        <ul className="movies">
             {movies.map((movie) =>{
               return(
-                <li key={movie.id}>
+                <li className="movie" key={movie.id}>
                   <h3>{movie.title} - {movie.year}</h3>
                   <img src={movie.poster} alt={movie.title} />
                 </li>
