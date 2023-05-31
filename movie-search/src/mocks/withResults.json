@@ -1,0 +1,76 @@
+{
+    "Search": [
+        {
+            "Title": "Qualquer Gato Vira-Lata",
+            "Year": "2011",
+            "imdbID": "tt1730133",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMTg0NDE5MDIzNl5BMl5BanBnXkFtZTcwMjQwODYzNw@@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Gato Fedorento: Série Fonseca",
+            "Year": "2003–2005",
+            "imdbID": "tt0390707",
+            "Type": "series",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNWQ3ZDUxZGYtNWVjZC00OWVlLThjMDAtZjkzM2I0N2FiZWY4XkEyXkFqcGdeQXVyMjUyMTE3MTc@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Gato Fedorento: Diz que é uma Espécie de Magazine",
+            "Year": "2006–",
+            "imdbID": "tt0891380",
+            "Type": "series",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BOGVhNGVmNjAtNTYwMi00YmVjLWI0MGItOTFkZmUyMmE2MmVkXkEyXkFqcGdeQXVyMjUyMTE3MTc@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Gato Fedorento: Série Lopes da Silva",
+            "Year": "2006–",
+            "imdbID": "tt0781285",
+            "Type": "series",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYWMwZTEwM2MtYjMwNy00OTZlLWEzYzEtM2QyYWRhNDlmOTQ2XkEyXkFqcGdeQXVyMjUyMTE3MTc@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Gato Fedorento: Série Meireles",
+            "Year": "2004–",
+            "imdbID": "tt0786790",
+            "Type": "series",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BYWFmZjkzZTctYWMwNy00NzkzLTk2MDAtYmUwMDBkODJiNzk5XkEyXkFqcGdeQXVyMjUyMTE3MTc@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Gato Fedorento: Série Barbosa",
+            "Year": "2005–",
+            "imdbID": "tt0786789",
+            "Type": "series",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BNDI2Y2EzYTUtMWMwMi00ZGM5LWJiZWQtZjg3OGY1ZTRmNDg4XkEyXkFqcGdeQXVyMjUyMTE3MTc@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Gato Fedorento: Zé Carlos",
+            "Year": "2008–",
+            "imdbID": "tt1450378",
+            "Type": "series",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BZGFjN2Q2ZDYtYjhlNC00MmZlLWIxMmItNDAxNjM1MWM3OTI0XkEyXkFqcGdeQXVyMjUyMTE3MTc@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Estória do Gato e da Lua",
+            "Year": "1997",
+            "imdbID": "tt0109748",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BMTI0NjUzMDU3OF5BMl5BanBnXkFtZTcwMDY3MzMyMQ@@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Qualquer Gato Vira-Lata 2",
+            "Year": "2015",
+            "imdbID": "tt4657092",
+            "Type": "movie",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BZTNjNmQ4MzctZDJhYy00M2RjLTg2YjMtYTc2M2EwN2I2NzY4XkEyXkFqcGdeQXVyMTkzODUwNzk@._V1_SX300.jpg"
+        },
+        {
+            "Title": "Gato Fedorento: Esmiúça os Sufrágios",
+            "Year": "2009–",
+            "imdbID": "tt1738509",
+            "Type": "series",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BZDM4ODMwNGMtZDQ4MS00ZTJhLWEwMTMtNGEwNDk4ZGNkMjU1XkEyXkFqcGdeQXVyMjUyMTE3MTc@._V1_SX300.jpg"
+        }
+    ],
+    "totalResults": "129",
+    "Response": "True"
+}
