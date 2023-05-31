@@ -1,5 +1,5 @@
-import { useState , useEffect } from 'react'
-import { CAT_FACT, CAT_IMAGE, URL_PREFIX } from './constants.js'
+import { useCatImage } from "./hooks/useCatImage.js"
+import { useCatFact } from './hooks/useCatFact.js'
 import './App.css'
 
 /* 
@@ -13,36 +13,19 @@ Muestra la imagen con la primera palabra del hecho recuperado
 */
 
 function App() {
-  const [catFact, setCatFact] = useState()
-  const [imgRandom, setImgRandom] = useState()
+  const { catFact, refreshFact } = useCatFact()
+  const { imgRandom } = useCatImage({catFact})
+  const handleClick = async () =>{
+    refreshFact()
+  }
   
-  useEffect(() =>{
-    fetch(CAT_FACT)
-    .then(res => res.json())
-    .then(data => {
-      const { fact } = data
-      const word = fact.split(' ')[0]
-      setCatFact(word)
-    })
-  },[])
-
-  useEffect(() =>{
-    if(!catFact) return
-
-    fetch(CAT_IMAGE)
-    .then(res => res.json())
-    .then(data => {
-      const { url } = data
-      setImgRandom(url)
-    })
-  }, [catFact])
-
   return (
     <main>
       <h1>Hello world</h1>
+      <button onClick={handleClick}>Get new Fact</button>
       <section>
         {catFact && <p>{catFact}</p>}
-        {imgRandom && <img src={`${URL_PREFIX}${imgRandom}`} alt="Image random for random fact" />}
+        {imgRandom && <img src={imgRandom} alt="Image random for random fact" />}
       </section>
     </main>
   )
