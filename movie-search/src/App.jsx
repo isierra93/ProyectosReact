@@ -1,22 +1,45 @@
 import './App.css'
-import {useMovies} from "./hooks/useMovies.js"
+import { useMovies } from "./hooks/useMovies.js"
 import { Movies } from './components/Movies.jsx'
-import { useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
+function useSearch () {
+  const [search, updateSearch] = useState('')
+  const [error, setError] = useState(null)
 
+  useEffect(() =>{
+    if(search === ''){
+      setError('No se puede buscar una pelicula vacia')
+      return
+    }
+
+    if(search.length < 3){
+      setError('La busqueda debe tener al menos 3 caracteres')
+      return
+    }
+
+    setError(null)
+  },[search])
+
+  return {search, updateSearch, error}
+}
+
+// 56
 
 function App() {
-
-  const { movies : mappedMovies } = useMovies()
-  const [query, setQuery] = useState('')
+  
+  const {search , updateSearch, error} = useSearch()
+  const { movies , getMovies } = useMovies({ search })
+  
 
   function handleSubmit(e){
     e.preventDefault()
-    console.log({query});
+    getMovies()
+    console.log({search});
   }
 
   function handleChange (e) {
-    setQuery(e.target.value)
+    updateSearch(e.target.value)
   }
 
   return (
@@ -25,18 +48,18 @@ function App() {
         <h1>Buscador de peliculas</h1>
         <form className='form' action='' onSubmit={handleSubmit}>
           <input 
+          required
           name='query' 
-          value={query} 
+          value={search} 
           onChange={handleChange} 
           type='text' 
           placeholder='Avengers, Toy Story, Gato con botas, etc' />
             <button type='submit' >Buscar</button>
         </form>
+        {error && <p style={{color:'red'}}>{error}</p>}
       </header>
       <main>
-        <section>
-          <Movies movies={mappedMovies}/>
-        </section>
+          <Movies movies={movies}/>  
       </main>
     </div>
   )
