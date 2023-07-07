@@ -1,28 +1,23 @@
-import withResults from "../mocks/withResults.json"
-import noResults from "../mocks/noResults.json"
 import { useState } from "react"
+import { searchMovies } from "../services/movies.js"
 
 export function useMovies ({ search }){
-    const [responseMovies, setResponseMovies] = useState([])
+    const [movies, setMovies] = useState([])
+    const [loading , setLoading] = useState(false)
+    const [error, setError] = useState(null)
 
-    const movies = responseMovies.Search
-    
-    //if(!movies.length > 0) return { movies : movies }
-    
-    const mappedMovies = movies?.map(movie => ({
-      id: movie.imdbID,
-      title: movie.Title,
-      year: movie.Year,
-      poster: movie.Poster
-    }))
-
-    const getMovies = () => {
-      if(search){
-        setResponseMovies(withResults)
-      }else{
-        setResponseMovies(noResults)
+    const getMovies = async () => {
+      try {
+        setLoading(true)
+        setError(null)
+        const newMovies = await searchMovies({ search })
+        setMovies(newMovies)
+      } catch (e) {
+        setError(e.message)
+      }finally{
+        setLoading(false)
       }
     }
     
-    return { movies : mappedMovies, getMovies }
+    return { movies , getMovies, loading }
   }

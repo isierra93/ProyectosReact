@@ -1,13 +1,19 @@
 import './App.css'
 import { useMovies } from "./hooks/useMovies.js"
 import { Movies } from './components/Movies.jsx'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 function useSearch () {
   const [search, updateSearch] = useState('')
   const [error, setError] = useState(null)
+  const isFirstInput = useRef(true)
 
   useEffect(() =>{
+    if(isFirstInput.current){
+      isFirstInput.current = search === ''
+      return
+    }
+    
     if(search === ''){
       setError('No se puede buscar una pelicula vacia')
       return
@@ -24,18 +30,15 @@ function useSearch () {
   return {search, updateSearch, error}
 }
 
-// 56
-
 function App() {
   
   const {search , updateSearch, error} = useSearch()
-  const { movies , getMovies } = useMovies({ search })
+  const {movies , getMovies, loading} = useMovies({ search })
   
 
   function handleSubmit(e){
     e.preventDefault()
     getMovies()
-    console.log({search});
   }
 
   function handleChange (e) {
@@ -59,7 +62,12 @@ function App() {
         {error && <p style={{color:'red'}}>{error}</p>}
       </header>
       <main>
-          <Movies movies={movies}/>  
+        {
+          loading ? 
+          <p>Cargando...</p>
+          :
+          <Movies movies={movies}/>
+        }
       </main>
     </div>
   )
